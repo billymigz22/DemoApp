@@ -4,6 +4,7 @@ using DemoApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemoApp.Migrations
 {
     [DbContext(typeof(FarmerDbContext))]
-    partial class FarmerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220610012914_CroppingFarm Relation")]
+    partial class CroppingFarmRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +53,7 @@ namespace DemoApp.Migrations
 
                     b.HasKey("CroppingId");
 
-                    b.ToTable("Croppings");
+                    b.ToTable("Cropping");
                 });
 
             modelBuilder.Entity("DemoApp.Models.Farm", b =>

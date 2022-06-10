@@ -35,8 +35,10 @@ namespace DemoApp.Controllers
             }
 
             var farmer = await _context.Farmers
-                .Include(f => f.Farms)
+                .Include(m => m.Farms)
+                .ThenInclude(fm => fm.Croppings)
                 .FirstOrDefaultAsync(m => m.FarmerId == id);
+          
             if (farmer == null)
             {
                 return NotFound();

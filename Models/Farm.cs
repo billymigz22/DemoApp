@@ -11,5 +11,7 @@ namespace DemoApp.Models
         public string FarmAddress { get; set; }
         public Farmer? Farmer { get; set; }
         public int FarmerId { get; set; }
+
+        public List<Cropping>? Croppings { get; set; }
     }
 }

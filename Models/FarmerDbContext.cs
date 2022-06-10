@@ -10,6 +10,7 @@ namespace DemoApp.Models
         }
         public DbSet<Farmer> Farmers { get; set; }
         public DbSet<Farm> Farms { get; set; }
+        public DbSet<Cropping> Croppings { get; set; }
 
         
     }

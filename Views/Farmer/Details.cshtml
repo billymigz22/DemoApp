@@ -48,6 +48,7 @@
             <th>Hectare</th>
             <th>Tenurial Status</th>
             <th>Farm Address</th>
+            <th>Croppings</th>
             <th> <a asp-action="AddFarm" asp-route-id="@Model?.FarmerId">Add Farm</a></th>
         </thead> 
         <tbody>
@@ -57,6 +58,14 @@
                <td>@item.Hectare</td>
                <td>@item.TenurialStatus</td>
                <td>@item.FarmAddress</td>
+               <td>
+                   @foreach(var crop in item.Croppings)
+                    {
+                      <p>@crop.Crop</p> 
+                    }
+                        
+               </td>
+               
 
                
             </tr>
