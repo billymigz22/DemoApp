@@ -1,0 +1,50 @@
+﻿@model DemoApp.Models.Farm
+
+@{
+    ViewData["Title"] = "Add Farm";
+}
+
+
+<h4>Add Farm</h4>
+
+<div class="row">
+    <div class="col-md-9 off-set-md-3">
+        <form  asp-action="AddFarm" >
+            <input type="hidden" asp-for="FarmerId" value="@ViewBag.FarmerId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Hectare" class="control-label"></label>
+                <input asp-for="Hectare" class="form-control" />
+                <span asp-validation-for="Hectare" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenurialStatus" class="control-label"></label>
+                <input asp-for="TenurialStatus" class="form-control" />
+                <span asp-validation-for="TenurialStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FarmAddress" class="control-label"></label>
+                <input asp-for="FarmAddress" class="form-control" />
+                <span asp-validation-for="FarmAddress" class="text-danger"></span>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <input type="submit" value="Add" class="btn btn-success w-100" />
+                </div>
+                <div class="col-md-6">
+                    <a asp-action="Details" asp-route-id="@ViewBag.FarmerId" class="btn btn-danger w-100">Back to List</a>
+                </div>
+            </div>
+
+           
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
